@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slides - Função Afim (AEP)</title>
+    <title>Slides Completos - Função Afim (AEP)</title>
     <style>
-        /* Configurações para a tela do navegador */
         body {
             background-color: #333;
             margin: 0;
@@ -31,20 +30,21 @@
         }
 
         /* Tipografia */
-        h1 { color: #1a365d; font-size: 42px; margin-bottom: 10px; }
-        h2 { color: #2b6cb0; font-size: 32px; margin-top: 0; border-bottom: 3px solid #2b6cb0; padding-bottom: 10px; }
-        p, li { color: #2d3748; font-size: 24px; line-height: 1.4; }
-        ul { margin-left: 20px; }
+        h1 { color: #1a365d; font-size: 46px; margin-bottom: 10px; text-align: center;}
+        h2 { color: #2b6cb0; font-size: 28px; margin-top: 0; border-bottom: 3px solid #2b6cb0; padding-bottom: 10px; }
+        h3 { color: #2c5282; font-size: 22px; margin-bottom: 5px; }
+        p, li { color: #2d3748; font-size: 20px; line-height: 1.3; }
+        ul, ol { margin-left: 20px; margin-top: 5px; }
         
         /* Elementos de Design */
         .footer-slide {
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             left: 40px;
             right: 40px;
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 12px;
             color: #a0aec0;
             border-top: 1px solid #e2e8f0;
             padding-top: 10px;
@@ -53,63 +53,51 @@
         .highlight-box {
             background-color: #ebf8ff;
             border-left: 5px solid #3182ce;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 15px 20px;
+            margin: 10px 0;
             border-radius: 4px;
+        }
+        
+        .biblical-box {
+            background-color: #faf5ff;
+            border-left: 5px solid #805ad5;
         }
 
         .formula {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: bold;
             text-align: center;
             color: #2c5282;
-            margin: 20px 0;
+            margin: 10px 0;
             font-family: 'Courier New', Courier, monospace;
         }
 
-        /* Simulação de Gráficos com CSS */
-        .graficos-container {
+        .columns {
             display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 10px;
         }
         
-        .grafico-box {
-            text-align: center;
-            width: 250px;
+        .col {
+            flex: 1;
         }
 
-        .plano-cartesiano {
-            width: 150px;
-            height: 150px;
-            border-left: 2px solid #333;
-            border-bottom: 2px solid #333;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .eixo-x { position: absolute; bottom: -15px; right: -10px; font-size: 14px; }
-        .eixo-y { position: absolute; top: -20px; left: -15px; font-size: 14px; }
-
-        .reta {
-            position: absolute;
-            background-color: #e53e3e;
-            height: 3px;
-            width: 180px;
-            transform-origin: left center;
-        }
-
+        /* Gráficos */
+        .graficos-container { display: flex; justify-content: space-around; margin-top: 10px; }
+        .grafico-box { text-align: center; width: 200px; }
+        .plano-cartesiano { width: 120px; height: 120px; border-left: 2px solid #333; border-bottom: 2px solid #333; position: relative; margin: 0 auto; }
+        .reta { position: absolute; background-color: #e53e3e; height: 3px; width: 140px; transform-origin: left center; }
         .reta-crescente { bottom: 0; left: 0; transform: rotate(-45deg); background-color: #38a169; }
         .reta-decrescente { top: 0; left: 0; transform: rotate(45deg); background-color: #e53e3e; }
-        .reta-horizontal { top: 75px; left: 0; background-color: #3182ce; }
+        .reta-horizontal { top: 60px; left: 0; background-color: #3182ce; }
 
-        /* Configuração de Impressão (Transformar em PDF) */
+        /* Configuração de Impressão */
         @media print {
             body { background-color: white; padding: 0; }
             .slide {
                 box-shadow: none;
                 margin: 0;
-                page-break-after: always; /* Garante um slide por página */
+                page-break-after: always;
                 width: 100vw;
                 height: 100vh;
                 border: none;
@@ -121,124 +109,220 @@
 <body>
 
     <!-- SLIDE 1: CAPA -->
-    <div class="slide" style="justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0f4f8, #ffffff);">
-        <h1 style="font-size: 56px;">Função Afim</h1>
-        <h2 style="border: none; color: #4a5568; font-weight: normal;">Definição e Gráfico</h2>
-        <div style="margin-top: 40px;">
-            <p><strong>Matemática | 1ª Série do Ensino Médio</strong></p>
-            <p>Abordagem Educacional por Princípios (AEP)</p>
+    <div class="slide" style="justify-content: center;">
+        <h1>Função Afim</h1>
+        <h2 style="border: none; text-align: center; color: #4a5568;">Definição e Gráfico</h2>
+        <div style="text-align: center; margin-top: 30px;">
+            <p><strong>Disciplina:</strong> Matemática | 1ª Série do Ensino Médio</p>
+            <p><strong>Professor(a):</strong> [Seu Nome]</p>
+            <p><strong>Metodologia:</strong> Abordagem Educacional por Princípios (AEP) - Método 4 Passos</p>
         </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Data: [Inserir]</span></div>
     </div>
 
-    <!-- SLIDE 2: INSPIRAÇÃO -->
+    <!-- SLIDE 2: OBJETIVOS E BNCC -->
     <div class="slide">
-        <h2>A Dinâmica da Fita (Pesquisar)</h2>
-        <p>O que a inclinação de uma fita tem a ver com a matemática?</p>
+        <h2>Objetivos e Base Nacional</h2>
         <div class="highlight-box">
+            <h3>Objetivos da Aula:</h3>
             <ul>
-                <li><strong>Fita subindo:</strong> A tendência é crescer.</li>
-                <li><strong>Fita descendo:</strong> A tendência é diminuir.</li>
-                <li><strong>Fita reta:</strong> Não há variação (constante).</li>
+                <li>Compreender a lei de formação da função afim f(x) = ax + b.</li>
+                <li>Identificar o coeficiente angular (a) e linear (b).</li>
+                <li>Reconhecer e esboçar o gráfico de uma função afim como uma reta.</li>
             </ul>
         </div>
-        <p style="margin-top: 30px; font-style: italic;">A matemática estuda o movimento, as tendências e as direções através das funções.</p>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
-    </div>
-
-    <!-- SLIDE 3: DEFINIÇÃO -->
-    <div class="slide">
-        <h2>O Conceito (Raciocinar)</h2>
-        <div class="formula">f(x) = ax + b</div>
-        <p>O que significa cada letra?</p>
-        <ul>
-            <li><strong>a (Coeficiente Angular):</strong> É a inclinação da reta. Diz se ela sobe ou desce.</li>
-            <li><strong>b (Coeficiente Linear):</strong> É o ponto de partida, onde a reta corta o eixo Y.</li>
-        </ul>
-        <div class="highlight-box" style="margin-top: 20px;">
-            <strong>Exemplo real:</strong> Corrida de aplicativo: f(x) = 2x + 5 (R$ 5,00 de base + R$ 2,00 por km rodado).
+        <div class="highlight-box" style="background-color: #f0fff4; border-left-color: #38a169;">
+            <h3>BNCC (Habilidade):</h3>
+            <p><strong>(EM13MAT302)</strong> Construir modelos empregando as funções polinomiais de 1º grau, para resolver problemas em contextos diversos, com ou sem apoio de tecnologias digitais.</p>
         </div>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Pesquisar</span></div>
     </div>
 
-    <!-- SLIDE 4: GRÁFICOS -->
+    <!-- SLIDE 3: INSPIRAÇÃO E MAKER -->
     <div class="slide">
-        <h2>O Gráfico (Relacionar)</h2>
+        <h2>Pesquisar: Inspiração e Maker</h2>
+        <div class="columns">
+            <div class="col">
+                <div class="highlight-box" style="height: 100%;">
+                    <h3>A Dinâmica da Fita</h3>
+                    <p>Dois alunos seguram uma fita no quadro.</p>
+                    <ul>
+                        <li><strong>Subir a ponta:</strong> Inclinação Crescente.</li>
+                        <li><strong>Descer a ponta:</strong> Inclinação Decrescente.</li>
+                        <li><strong>Nivelar:</strong> Reta Constante.</li>
+                    </ul>
+                    <p><em>"O que a inclinação da fita tem a ver com o preço de uma corrida de aplicativo?"</em></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="highlight-box" style="background-color: #fffaf0; border-left-color: #dd6b20; height: 100%;">
+                    <h3>Desafio Maker (Tarefa)</h3>
+                    <p>Desenhar em uma folha 3 planos cartesianos representando a fita:</p>
+                    <ol>
+                        <li>Fita subindo (Crescente).</li>
+                        <li>Fita descendo (Decrescente).</li>
+                        <li>Fita reta (Horizontal).</li>
+                    </ol>
+                    <p><em>* Indicar a lei de formação f(x)=ax+b e entregar na próxima aula para correção.</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Pesquisar</span></div>
+    </div>
+
+    <!-- SLIDE 4: PALAVRAS-CHAVE E DEFINIÇÕES -->
+    <div class="slide">
+        <h2>Pesquisar: Palavras-Chave e Definição</h2>
+        <div class="columns">
+            <div class="col">
+                <h3>Definições do Dicionário:</h3>
+                <ul>
+                    <li><strong>Inclinação:</strong> Ato de inclinar; direção, tendência para um lado.</li>
+                    <li><strong>Variação:</strong> Mudança de estado ou de valor.</li>
+                    <li><strong>Reta:</strong> Linha que segue sempre a mesma direção.</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Definição Pessoal (AEP):</h3>
+                <div class="highlight-box">
+                    <p>"A Função Afim é uma regra matemática que representa um crescimento ou decrescimento <strong>constante</strong> (proporcional) entre duas variáveis, cujo gráfico visual é sempre uma linha <strong>reta</strong> inclinada ou horizontal."</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Pesquisar</span></div>
+    </div>
+
+    <!-- SLIDE 5: RACIOCINAR (CONCEITO MATEMÁTICO) -->
+    <div class="slide">
+        <h2>Raciocinar: O Conceito Matemático</h2>
+        <div class="formula">f(x) = ax + b</div>
+        <div class="columns">
+            <div class="col">
+                <ul>
+                    <li><strong>a (Coeficiente Angular):</strong> É a inclinação da fita. Define se a reta é crescente (a > 0) ou decrescente (a < 0).</li>
+                    <li><strong>b (Coeficiente Linear):</strong> É o ponto de partida (onde a reta corta o eixo y).</li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="highlight-box">
+                    <strong>Exemplo Rápido:</strong><br>
+                    Corrida de aplicativo: f(x) = 2x + 5<br>
+                    (R$ 5,00 de taxa fixa + R$ 2,00 por km rodado).
+                </div>
+            </div>
+        </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Raciocinar</span></div>
+    </div>
+
+    <!-- SLIDE 6: GRÁFICOS -->
+    <div class="slide">
+        <h2>Raciocinar: Comportamento Gráfico</h2>
         <div class="graficos-container">
             <div class="grafico-box">
                 <div class="plano-cartesiano">
                     <div class="reta reta-crescente"></div>
-                    <span class="eixo-x">x</span><span class="eixo-y">y</span>
                 </div>
-                <p><strong>a > 0</strong><br>Crescente</p>
+                <p><strong>a > 0</strong><br>Crescente<br><em>(Fita subindo)</em></p>
             </div>
             <div class="grafico-box">
                 <div class="plano-cartesiano">
                     <div class="reta reta-decrescente"></div>
-                    <span class="eixo-x">x</span><span class="eixo-y">y</span>
                 </div>
-                <p><strong>a < 0</strong><br>Decrescente</p>
+                <p><strong>a < 0</strong><br>Decrescente<br><em>(Fita descendo)</em></p>
             </div>
             <div class="grafico-box">
                 <div class="plano-cartesiano">
                     <div class="reta reta-horizontal"></div>
-                    <span class="eixo-x">x</span><span class="eixo-y">y</span>
                 </div>
-                <p><strong>a = 0</strong><br>Constante</p>
+                <p><strong>a = 0</strong><br>Constante<br><em>(Fita reta)</em></p>
             </div>
         </div>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Raciocinar</span></div>
     </div>
 
-    <!-- SLIDE 5: MAKER -->
+    <!-- SLIDE 7: PRINCÍPIO BÍBLICO -->
     <div class="slide">
-        <h2>Desafio Maker (Registrar)</h2>
-        <p><strong>Tarefa de Casa:</strong> Vamos colocar a mão na massa!</p>
-        <div class="highlight-box">
-            <ol style="font-size: 24px;">
-                <li>Pegue uma folha e desenhe 3 planos cartesianos.</li>
-                <li>Desenhe uma fita <strong>subindo</strong> (a > 0).</li>
-                <li>Desenhe uma fita <strong>descendo</strong> (a < 0).</li>
-                <li>Desenhe uma fita <strong>reta</strong> (a = 0).</li>
-                <li>Escreva a lei de formação f(x) = ax + b para cada uma.</li>
+        <h2>Raciocinar: Princípio da Soberania</h2>
+        <div class="biblical-box">
+            <p style="font-style: italic; margin-bottom: 5px;">"Toda boa dádiva e todo dom perfeito vêm do alto, descendo do Pai das luzes, em quem não há mudança nem sombra de variação." (Tiago 1:17)</p>
+        </div>
+        
+        <div class="columns" style="margin-top: 15px;">
+            <div class="col">
+                <h3>Por que Soberania?</h3>
+                <p>A matemática não é aleatória. A constância do coeficiente 'a' reflete a ordem de um Deus que criou leis precisas e imutáveis para o universo.</p>
+            </div>
+            <div class="col">
+                <h3>Perguntas para Refletir:</h3>
+                <ul>
+                    <li>Se as regras mudassem a cada dia, o mundo funcionaria?</li>
+                    <li>O "jeito" de segurar a fita define sua direção. Como as leis de Deus definem a direção da nossa vida?</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Raciocinar</span></div>
+    </div>
+
+    <!-- SLIDE 8: PROPÓSITOS E IDEIA-GUIA -->
+    <div class="slide">
+        <h2>Pesquisa Bíblica e Ideia-Guia</h2>
+        <div class="columns">
+            <div class="col">
+                <div class="highlight-box biblical-box">
+                    <h3>Propósito Vertical (Com Deus)</h3>
+                    <p>Reconhecer que a constância matemática reflete a fidelidade de Deus. As leis previsíveis nos mostram um Criador que não muda.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="highlight-box" style="background-color: #f0fff4; border-left-color: #38a169;">
+                    <h3>Propósito Horizontal (Com o Próximo)</h3>
+                    <p>Usar a previsibilidade (como calcular custos e juros) para ajudar as pessoas a planejarem suas finanças com transparência e justiça.</p>
+                </div>
+            </div>
+        </div>
+        <div class="idea-guia" style="margin-top: 20px; text-align: center; border: 2px dashed #2b6cb0; padding: 15px; font-size: 22px; font-weight: bold; color: #1a365d;">
+            "AS FUNÇÕES AFIM REVELAM A CONSTÂNCIA DAS LEIS QUE REGEM A CRIAÇÃO E AS RELAÇÕES HUMANAS."
+        </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Raciocinar</span></div>
+    </div>
+
+    <!-- SLIDE 9: RELACIONAR -->
+    <div class="slide">
+        <h2>Relacionar: Interdisciplinaridade e Cotidiano</h2>
+        <div class="columns">
+            <div class="col">
+                <h3>Outras Disciplinas:</h3>
+                <ul>
+                    <li><strong>Biologia:</strong> Crescimento linear de plantas (altura x tempo).</li>
+                    <li><strong>Geografia:</strong> Escala de mapas (distância no papel x distância real).</li>
+                    <li><strong>Jogos Eletrônicos:</strong> Ganho de XP por tempo jogado.</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Perguntas de Aplicação:</h3>
+                <ul>
+                    <li>Quais serviços cobram "taxa fixa + valor por uso"?</li>
+                    <li>Se o coeficiente 'a' for negativo, o que isso significa na prática? (Ex: desvalorização de um carro).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Relacionar</span></div>
+    </div>
+
+    <!-- SLIDE 10: REGISTRAR -->
+    <div class="slide">
+        <h2>Registrar: Consolidação do Conhecimento</h2>
+        <div class="highlight-box" style="background-color: #fff5f5; border-left-color: #e53e3e;">
+            <h3>Proposta de Registro no Caderno (Mapa Mental):</h3>
+            <ol>
+                <li><strong>A Definição:</strong> Escrever a fórmula f(x) = ax + b (onde a ≠ 0).</li>
+                <li><strong>Os Gráficos:</strong> Desenhar um plano cartesiano com uma reta crescente (a>0) e outro com uma reta decrescente (a<0).</li>
+                <li><strong>O Exemplo:</strong> Registrar a equação da corrida de aplicativo f(x) = 2x + 5.</li>
+                <li><strong>Conclusão:</strong> Copiar a Ideia-Guia sobre a constância das leis de Deus.</li>
             </ol>
         </div>
-        <p style="margin-top: 20px; color: #e53e3e; font-weight: bold;">* Entrega e correção na próxima aula!</p>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
-    </div>
-
-    <!-- SLIDE 6: PRINCIPIO BIBLICO -->
-    <div class="slide">
-        <h2>Raciocinar (Princípio da Soberania)</h2>
-        <p style="font-style: italic; color: #4a5568; border-left: 4px solid #cbd5e0; padding-left: 15px;">
-            "Toda boa dádiva e todo dom perfeito vêm do alto, descendo do Pai das luzes, em quem não há mudança nem sombra de variação." (Tiago 1:17)
-        </p>
-        <div class="highlight-box" style="margin-top: 30px;">
-            <p>As leis matemáticas revelam a <strong>ordem e a constância</strong> do Criador.</p>
-            <p>Assim como a fita precisa de duas pontas firmes para ter uma direção, nossas escolhas definem a inclinação da nossa vida (crescimento ou queda).</p>
-        </div>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
-    </div>
-
-    <!-- SLIDE 7: INTERDISCIPLINARIDADE -->
-    <div class="slide">
-        <h2>Relacionar (Interdisciplinaridade)</h2>
-        <p>Onde mais encontramos a Função Afim?</p>
-        <ul style="margin-top: 20px;">
-            <li><strong>Biologia:</strong> Crescimento linear de plantas (tempo x altura).</li>
-            <li><strong>Geografia:</strong> Escalas de mapas (distância no papel x distância real).</li>
-            <li><strong>Jogos Eletrônicos:</strong> Ganho de XP por tempo jogado.</li>
-            <li><strong>Cotidiano:</strong> Taxas de água, luz, planos de celular.</li>
-        </ul>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
-    </div>
-
-    <!-- SLIDE 8: CONCLUSÃO -->
-    <div class="slide" style="justify-content: center; align-items: center; text-align: center;">
-        <h2 style="border: none;">Conclusão</h2>
-        <div class="formula">f(x) = ax + b</div>
-        <p>A inclinação da reta (a) nos mostra como as coisas variam no mundo.</p>
-        <p style="margin-top: 40px; font-weight: bold; color: #2b6cb0;">Dúvidas?</p>
-        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+        <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #2b6cb0;">Não se esqueçam do Desafio Maker (Tarefa de Casa) para a próxima aula!</p>
+        <div class="footer-slide"><span>AEP - Colégio Fonte</span><span>Passo: Registrar</span></div>
     </div>
 
 </body>
