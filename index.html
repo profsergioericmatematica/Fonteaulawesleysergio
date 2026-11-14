@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides - Função Afim (AEP)</title>
+    <style>
+        /* Configurações para a tela do navegador */
+        body {
+            background-color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .slide {
+            background-color: #ffffff;
+            width: 960px;
+            height: 540px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Tipografia */
+        h1 { color: #1a365d; font-size: 42px; margin-bottom: 10px; }
+        h2 { color: #2b6cb0; font-size: 32px; margin-top: 0; border-bottom: 3px solid #2b6cb0; padding-bottom: 10px; }
+        p, li { color: #2d3748; font-size: 24px; line-height: 1.4; }
+        ul { margin-left: 20px; }
+        
+        /* Elementos de Design */
+        .footer-slide {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #a0aec0;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+
+        .highlight-box {
+            background-color: #ebf8ff;
+            border-left: 5px solid #3182ce;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .formula {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            color: #2c5282;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Simulação de Gráficos com CSS */
+        .graficos-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        
+        .grafico-box {
+            text-align: center;
+            width: 250px;
+        }
+
+        .plano-cartesiano {
+            width: 150px;
+            height: 150px;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .eixo-x { position: absolute; bottom: -15px; right: -10px; font-size: 14px; }
+        .eixo-y { position: absolute; top: -20px; left: -15px; font-size: 14px; }
+
+        .reta {
+            position: absolute;
+            background-color: #e53e3e;
+            height: 3px;
+            width: 180px;
+            transform-origin: left center;
+        }
+
+        .reta-crescente { bottom: 0; left: 0; transform: rotate(-45deg); background-color: #38a169; }
+        .reta-decrescente { top: 0; left: 0; transform: rotate(45deg); background-color: #e53e3e; }
+        .reta-horizontal { top: 75px; left: 0; background-color: #3182ce; }
+
+        /* Configuração de Impressão (Transformar em PDF) */
+        @media print {
+            body { background-color: white; padding: 0; }
+            .slide {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always; /* Garante um slide por página */
+                width: 100vw;
+                height: 100vh;
+                border: none;
+            }
+            @page { size: landscape; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: CAPA -->
+    <div class="slide" style="justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0f4f8, #ffffff);">
+        <h1 style="font-size: 56px;">Função Afim</h1>
+        <h2 style="border: none; color: #4a5568; font-weight: normal;">Definição e Gráfico</h2>
+        <div style="margin-top: 40px;">
+            <p><strong>Matemática | 1ª Série do Ensino Médio</strong></p>
+            <p>Abordagem Educacional por Princípios (AEP)</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: INSPIRAÇÃO -->
+    <div class="slide">
+        <h2>A Dinâmica da corrente (Pesquisar)</h2>
+        <p>O que a inclinação de uma corrente tem a ver com a matemática?</p>
+        <div class="highlight-box">
+            <ul>
+                <li><strong>Corrente subindo:</strong> A tendência é crescer.</li>
+                <li><strong>Corrente descendo:</strong> A tendência é diminuir.</li>
+                <li><strong>Corrente reta:</strong> Não há variação (constante).</li>
+            </ul>
+        </div>
+        <p style="margin-top: 30px; font-style: italic;">A matemática estuda o movimento, as tendências e as direções através das funções.</p>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+    <!-- SLIDE 3: DEFINIÇÃO -->
+    <div class="slide">
+        <h2>O Conceito (Raciocinar)</h2>
+        <div class="formula">f(x) = ax + b</div>
+        <p>O que significa cada letra?</p>
+        <ul>
+            <li><strong>a (Coeficiente Angular):</strong> É a inclinação da reta. Diz se ela sobe ou desce.</li>
+            <li><strong>b (Coeficiente Linear):</strong> É o ponto de partida, onde a reta corta o eixo Y.</li>
+        </ul>
+        <div class="highlight-box" style="margin-top: 20px;">
+            <strong>Exemplo real:</strong> Corrida de aplicativo: f(x) = 2x + 5 (R$ 5,00 de base + R$ 2,00 por km rodado).
+        </div>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+    <!-- SLIDE 4: GRÁFICOS -->
+    <div class="slide">
+        <h2>O Gráfico (Relacionar)</h2>
+        <div class="graficos-container">
+            <div class="grafico-box">
+                <div class="plano-cartesiano">
+                    <div class="reta reta-crescente"></div>
+                    <span class="eixo-x">x</span><span class="eixo-y">y</span>
+                </div>
+                <p><strong>a > 0</strong><br>Crescente</p>
+            </div>
+            <div class="grafico-box">
+                <div class="plano-cartesiano">
+                    <div class="reta reta-decrescente"></div>
+                    <span class="eixo-x">x</span><span class="eixo-y">y</span>
+                </div>
+                <p><strong>a < 0</strong><br>Decrescente</p>
+            </div>
+            <div class="grafico-box">
+                <div class="plano-cartesiano">
+                    <div class="reta reta-horizontal"></div>
+                    <span class="eixo-x">x</span><span class="eixo-y">y</span>
+                </div>
+                <p><strong>a = 0</strong><br>Constante</p>
+            </div>
+        </div>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+    <!-- SLIDE 5: MAKER -->
+    <div class="slide">
+        <h2>Desafio Maker (Registrar)</h2>
+        <p><strong>Tarefa de Casa:</strong> Vamos colocar a mão na massa!</p>
+        <div class="highlight-box">
+            <ol style="font-size: 24px;">
+                <li>Pegue uma folha e desenhe 3 planos cartesianos.</li>
+                <li>Desenhe uma fita <strong>subindo</strong> (a > 0).</li>
+                <li>Desenhe uma fita <strong>descendo</strong> (a < 0).</li>
+                <li>Desenhe uma fita <strong>reta</strong> (a = 0).</li>
+                <li>Escreva a lei de formação f(x) = ax + b para cada uma.</li>
+            </ol>
+        </div>
+        <p style="margin-top: 20px; color: #e53e3e; font-weight: bold;">* Entrega e correção na próxima aula!</p>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+    <!-- SLIDE 6: PRINCIPIO BIBLICO -->
+    <div class="slide">
+        <h2>Raciocinar (Princípio da Soberania)</h2>
+        <p style="font-style: italic; color: #4a5568; border-left: 4px solid #cbd5e0; padding-left: 15px;">
+            "Toda boa dádiva e todo dom perfeito vêm do alto, descendo do Pai das luzes, em quem não há mudança nem sombra de variação." (Tiago 1:17)
+        </p>
+        <div class="highlight-box" style="margin-top: 30px;">
+            <p>As leis matemáticas revelam a <strong>ordem e a constância</strong> do Criador.</p>
+            <p>Assim como a fita precisa de duas pontas firmes para ter uma direção, nossas escolhas definem a inclinação da nossa vida (crescimento ou queda).</p>
+        </div>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+    <!-- SLIDE 7: INTERDISCIPLINARIDADE -->
+    <div class="slide">
+        <h2>Relacionar (Interdisciplinaridade)</h2>
+        <p>Onde mais encontramos a Função Afim?</p>
+        <ul style="margin-top: 20px;">
+            <li><strong>Biologia:</strong> Crescimento linear de plantas (tempo x altura).</li>
+            <li><strong>Geografia:</strong> Escalas de mapas (distância no papel x distância real).</li>
+            <li><strong>Jogos Eletrônicos:</strong> Ganho de XP por tempo jogado.</li>
+            <li><strong>Cotidiano:</strong> Taxas de água, luz, planos de celular.</li>
+        </ul>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+    <!-- SLIDE 8: CONCLUSÃO -->
+    <div class="slide" style="justify-content: center; align-items: center; text-align: center;">
+        <h2 style="border: none;">Conclusão</h2>
+        <div class="formula">f(x) = ax + b</div>
+        <p>A inclinação da reta (a) nos mostra como as coisas variam no mundo.</p>
+        <p style="margin-top: 40px; font-weight: bold; color: #2b6cb0;">Dúvidas?</p>
+        <div class="footer-slide"><span>Função Afim - AEP</span><span>Colégio Fonte</span></div>
+    </div>
+
+</body>
+</html>
